@@ -4,7 +4,11 @@
   "description": "The personal money management software with sixjars system.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron index.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +28,13 @@
   "bugs": {
     "url": "https://github.com/chunza2542/sixjar/issues"
   },
-  "homepage": "https://github.com/chunza2542/sixjar#readme"
+  "homepage": "https://github.com/chunza2542/sixjar#readme",
+  "devDependencies": {
+    "electron": "^1.7.9"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "^1.0.14"
+  }
 }
