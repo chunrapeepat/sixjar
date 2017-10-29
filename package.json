@@ -16,7 +16,8 @@
     "electron",
     "react",
     "tools",
-    "wallet"
+    "wallet",
+    "management"
   ],
   "author": "Chun Rapeepat",
   "license": "MIT",
