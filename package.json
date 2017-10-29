@@ -1,0 +1,27 @@
+{
+  "name": "sixjar",
+  "version": "1.0.0",
+  "description": "The personal money management software with sixjars system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunza2542/sixjar.git"
+  },
+  "keywords": [
+    "sixjar",
+    "money",
+    "electron",
+    "react",
+    "tools",
+    "wallet"
+  ],
+  "author": "Chun Rapeepat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chunza2542/sixjar/issues"
+  },
+  "homepage": "https://github.com/chunza2542/sixjar#readme"
+}
