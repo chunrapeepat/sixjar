@@ -35,6 +35,7 @@
     -->
     <script>
       // Disable zoom by keyboard and trackpad
+      require("electron").webFrame.setZoomLevel(1)
       require("electron").webFrame.setZoomLevelLimits(1, 1)
       require("electron").webFrame.setVisualZoomLevelLimits(1, 1)
       require("electron").webFrame.setLayoutZoomLevelLimits(0, 0)
