@@ -1,12 +1,22 @@
 import React, {Component} from 'react'
 import styled from 'react-emotion'
 import Ink from 'react-ink'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {actionCreator} from '../core/helper'
+import {
+  CHANGE_PAGE_ACTION,
+  OVERVIEW,
+  TRANSACTION,
+  BUDGET,
+  SETTING,
+} from '../core/constant'
 
 const Container = styled('div')`
   width: 100%;
   height: 100vh;
   background: #fcfcfc;
-  border: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 `
 
 const Padding = styled('div')`
@@ -27,26 +37,36 @@ const MenuLinkItem = styled('div')`
   background: ${props => (props.active) ? '#f0f0f0' : '#fefefe'};
 `
 
-export default class extends Component {
+class Navbar extends Component {
   render(){
+    const {page, actionCreator} = this.props
+
     return (
       <Container>
         <Padding>
           <HeroIcon>SIXJAR</HeroIcon>
         </Padding>
-        <MenuLinkItem active>
+        <MenuLinkItem
+          active={page === OVERVIEW}
+          onClick={() => actionCreator(CHANGE_PAGE_ACTION, OVERVIEW)}>
           Overview
           <Ink />
         </MenuLinkItem>
-        <MenuLinkItem>
+        <MenuLinkItem
+          active={page === TRANSACTION}
+          onClick={() => actionCreator(CHANGE_PAGE_ACTION, TRANSACTION)}>
           Transaction
           <Ink />
         </MenuLinkItem>
-        <MenuLinkItem>
+        <MenuLinkItem
+          active={page === BUDGET}
+          onClick={() => actionCreator(CHANGE_PAGE_ACTION, BUDGET)}>
           Budget
           <Ink />
         </MenuLinkItem>
-        <MenuLinkItem>
+        <MenuLinkItem
+          active={page === SETTING}
+          onClick={() => actionCreator(CHANGE_PAGE_ACTION, SETTING)}>
           Setting
           <Ink />
         </MenuLinkItem>
@@ -54,3 +74,15 @@ export default class extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    page: state.page
+  }
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({actionCreator}, dispatch)
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Navbar)
