@@ -13,6 +13,7 @@ const Container = styled('div')`
   color: #999;
   position: fixed;
   background: white;
+  z-index: 9999;
 
   ${this} > div {
     padding: 21px;

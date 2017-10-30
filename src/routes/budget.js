@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 
 import App from '../components/App'
 import PageNavigator from '../components/PageNavigator'
+import {Padding} from '../core/helper'
+import BudgetCard from '../components/BudgetCard'
 
 class Budget extends Component {
 
@@ -11,7 +13,15 @@ class Budget extends Component {
         <PageNavigator
           heading="BUDGET"
           description="Saving your budget to buy what you want" />
-        Budget Page
+        <Padding>
+          <BudgetCard />
+          <BudgetCard />
+          <BudgetCard />
+          <BudgetCard />
+          <BudgetCard />
+          <BudgetCard />
+          <BudgetCard />
+        </Padding>
       </div>
     )
   }
