@@ -4,13 +4,13 @@ import {connect} from 'react-redux'
 import Overview from './overview'
 import Transaction from './transaction'
 import Budget from './budget'
-import Setting from './setting'
+import About from './about'
 
 import {
   OVERVIEW,
   TRANSACTION,
   BUDGET,
-  SETTING,
+  ABOUT,
 } from '../core/constant'
 
 class Routes extends Component {
@@ -26,8 +26,8 @@ class Routes extends Component {
     if (page === BUDGET) {
       RenderComponent = Budget
     }
-    if (page === SETTING) {
-      RenderComponent = Setting
+    if (page === ABOUT) {
+      RenderComponent = About
     }
     return (
       <div>

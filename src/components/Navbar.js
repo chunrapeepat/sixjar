@@ -9,7 +9,7 @@ import {
   OVERVIEW,
   TRANSACTION,
   BUDGET,
-  SETTING,
+  ABOUT,
 } from '../core/constant'
 
 const Container = styled('div')`
@@ -65,9 +65,9 @@ class Navbar extends Component {
           <Ink />
         </MenuLinkItem>
         <MenuLinkItem
-          active={page === SETTING}
-          onClick={() => actionCreator(CHANGE_PAGE_ACTION, SETTING)}>
-          Setting
+          active={page === ABOUT}
+          onClick={() => actionCreator(CHANGE_PAGE_ACTION, ABOUT)}>
+          About
           <Ink />
         </MenuLinkItem>
       </Container>
