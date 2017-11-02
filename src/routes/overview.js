@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import fetch from 'isomorphic-fetch'
 
 import App from '../components/App'
 import PageNavigator from '../components/PageNavigator'
@@ -7,6 +8,12 @@ import {Padding} from '../core/helper'
 import JarOverview from '../components/JarOverview'
 
 class Overview extends Component {
+
+  componentWillMount() {
+    fetch('http://127.0.0.1:5000/hi')
+      .then(res => res.text())
+      .then(x => alert(x))
+  }
 
   render() {
     return (

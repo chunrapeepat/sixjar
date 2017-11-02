@@ -1,6 +1,7 @@
 const electron = require('electron')
 const open = require('open')
 const {app, BrowserWindow} = electron
+const server = require('./server')
 
 // This method will be call when Electron
 // has finished initialization.
@@ -15,3 +16,7 @@ app.on('ready', () => {
     open(uri)
   })
 })
+
+// Run Express server to communicate
+// with React web view
+server()
