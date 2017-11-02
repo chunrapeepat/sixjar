@@ -2,6 +2,7 @@ const electron = require('electron')
 const open = require('open')
 const {app, BrowserWindow} = electron
 const server = require('./server')
+const DatabaseHandler = require('./databaseHandler')
 
 // This method will be call when Electron
 // has finished initialization.
@@ -18,5 +19,6 @@ app.on('ready', () => {
 })
 
 // Run Express server to communicate
-// with React web view
-server()
+// with React web view + parse database handler
+const databaseHandler = new DatabaseHandler()
+server(databaseHandler)
