@@ -10,6 +10,13 @@ const initOverviewDatabase = `
   give:0
 `.replace(/  /g, '').trim()
 
+// getTransactions()
+// createTransaction(type, amount, desc)
+// removeTransaction(id)
+// getBudgets()
+// createBudget(name, amount, account)
+// removeBudget(id)
+
 class DatabaseHandler {
   // Contructor: Initialize Database Structure
   constructor() {
@@ -34,6 +41,27 @@ class DatabaseHandler {
         if (err) throw err
       })
     }
+  }
+  // getAccount: Get total amount of each account`
+  getAccount(account) {
+    let database = fs.readFileSync(this.overviewPath).toString()
+    database = database.split('\n')
+    database = database.map(x => x.split(':'))
+    database = database.filter(x => x[0] === account)
+    if (database.length === 0) {
+      return 'ERROR'
+    }
+    return database[0][1]
+  }
+  // setAccount: Set amount of each account
+  setAccount(account, amount) {
+    let database = fs.readFileSync(this.overviewPath).toString()
+    database = database.split('\n')
+    database = database.map(x => x.split(':'))
+    database = database.map(x => (x[0] === account) ? [x[0], amount] : x)
+    database = database.map(x => x.join(':'))
+    database = database.join('\n')
+    fs.writeFileSync(this.overviewPath, database)
   }
 }
 
