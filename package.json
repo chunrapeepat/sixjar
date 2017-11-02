@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "emotion": "^8.0.9",
+    "open": "^0.0.5",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-emotion": "^8.0.9",
