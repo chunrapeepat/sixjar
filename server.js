@@ -5,6 +5,8 @@ const cors = require('cors')
 app.use(cors())
 
 module.exports = (databaseHandler) => {
+  databaseHandler.createTransaction('Gurock test', 500, 'Play')
+  console.log(databaseHandler.getTransactions())
   // Get overview account total amount
   app.get('/overview/:account', (req, res) => {
     let account = req.params.account
