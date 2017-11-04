@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import styled from 'react-emotion'
 import {keyframes} from 'emotion'
-
+import Button from '../components/Button'
 import App from '../components/App'
-import {Padding} from '../core/helper'
+import {Padding, Heading, Input, Select} from '../core/helper'
 import PageNavigator from '../components/PageNavigator'
 import TransactionCard from '../components/TransactionCard'
 import NewTransactionButton from '../components/NewTransactionButton'
@@ -30,7 +30,7 @@ const TransactionPanel = styled('div')`
   position: fixed;
   z-index: 999999;
   width: 100%;
-  height: 400px;
+  height: 350px;
   background: white;
   transition: ${props => (props.display) ? '0.5s' : '0.2s'};
   bottom: ${props => (props.display) ? '0' : '-400px'};
@@ -81,7 +81,21 @@ class Transaction extends Component {
           heading="TRANSACTION"
           description="Manage your income & outcome transaction" />
         <TransactionPanel display={this.state.panelOpen}>
-
+          <Padding>
+            <Heading>Create New Transaction</Heading>
+            <Input type="text" placeholder="Reminder Note.." />
+            <Input type="number" placeholder="Amount" />
+            <Select>
+              <option value="income">Type: Income</option>
+              <option value="income">Type: Outcome - Necessity Account</option>
+              <option value="income">Type: Outcome - Play Account</option>
+              <option value="income">Type: Outcome - Financial Freedom Account</option>
+              <option value="income">Type: Outcome - Education Account</option>
+              <option value="income">Type: Outcome - Longterm Saving Account</option>
+              <option value="income">Type: Outcome - Give Account</option>
+            </Select>
+            <Button bgcolor="#D500F9">SUBMIT</Button>
+          </Padding>
         </TransactionPanel>
         <Padding>
           <TransactionCard />
